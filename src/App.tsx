@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import logo from './logo.svg';
 import styled from "styled-components";
 import './App.css';
 import searchBooks from "./services/OpenLibraryService";
