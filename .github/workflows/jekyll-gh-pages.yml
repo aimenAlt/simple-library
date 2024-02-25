@@ -1,41 +1,41 @@
-name: Deploy React App with GitHub Pages
-
-on:
-  push:
-    branches: ["main"]
-  workflow_dispatch:
-
-permissions:
-  contents: write
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v4
-      
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16' # Use the Node.js version compatible with your project
-
-      - name: Install Dependencies
-        run: npm install
-
-      - name: Build
-        run: npm run build
-
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4.1.4
-        with:
-          branch: gh-pages
-          folder: build
-          clean: true
-          token: ${{ secrets.GITHUB_TOKEN }} # Explicitly specifying the token
+#name: Deploy React App with GitHub Pages
+#
+#on:
+#  push:
+#    branches: ["main"]
+#  workflow_dispatch:
+#
+#permissions:
+#  contents: write
+#  pages: write
+#  id-token: write
+#
+#concurrency:
+#  group: "pages"
+#  cancel-in-progress: false
+#
+#jobs:
+#  build-and-deploy:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout Repo
+#        uses: actions/checkout@v4
+#
+#      - name: Setup Node.js
+#        uses: actions/setup-node@v3
+#        with:
+#          node-version: '16' # Use the Node.js version compatible with your project
+#
+#      - name: Install Dependencies
+#        run: npm install
+#
+#      - name: Build
+#        run: npm run build
+#
+#      - name: Deploy
+#        uses: JamesIves/github-pages-deploy-action@4.1.4
+#        with:
+#          branch: gh-pages
+#          folder: build
+#          clean: true
+#          token: ${{ secrets.GITHUB_TOKEN }} # Explicitly specifying the token

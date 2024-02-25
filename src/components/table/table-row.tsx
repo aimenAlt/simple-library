@@ -26,7 +26,7 @@ const TableRow: React.FC<TableRowProps> = ({ book }) => {
       <Td>{book.title}</Td>
       <Td>{book.authors}</Td>
       <Td>{book.firstPublishedYear}</Td>
-      <Td>{book.isbn}</Td>
+      <Td>{book.isbn[0]}</Td>
       <Td>{book.numberOfPages}</Td>
     </Tr>
   );

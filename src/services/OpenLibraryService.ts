@@ -3,14 +3,14 @@ import Book from "../interfaces/book";
 
 const searchBooks = async (query: string): Promise<Book[]> => {
   try {
-    const response = await fetch(`https://openlibrary.org/search.json?q=${encodeURIComponent(query)}`);
+    const response = await fetch(`https://openlibrary.org/search.json?q=${encodeURIComponent(query)}&fields=title,author_name,editions,first_publish_year,isbn,number_of_pages_median`);
     const data = await response.json();
 
     return data.docs.map((doc: any) => ({
       title: doc.title,
       authors: doc.author_name || [],
       firstPublishedYear: doc.first_publish_year,
-      isbn: doc.isbn || [],
+      isbn: doc?.isbn || [],
       numberOfPages: doc.number_of_pages_median || 0
     }));
   } catch (error) {

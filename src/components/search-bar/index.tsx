@@ -82,7 +82,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ value, onChange, handleSearch }) 
     return (
         <SearchContainer id='search-container'>
           <SearchBarWrapper id='search-bar-wrapper'>
-            <SearchInput id='search-input' type="text" placeholder="Search..." value={value} onChange={onChange}/>
+            <SearchInput id='search-input' type="text" placeholder="Search..." value={value} onChange={onChange} />
           </SearchBarWrapper>
           <SearchButtonWrapper id='search-button-wrapper'>
             <SearchButton id='search-button' type="button" onClick={handleSearch}>
